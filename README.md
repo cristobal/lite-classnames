@@ -27,7 +27,7 @@ classNames({ foo: true, bar: false, quux: true }); // => 'foo quux'
 
 At my previous workplace, we frequently used the [classnames](https://www.npmjs.com/package/classnames) utility function, but it became difficult to reason about due to varying preferences for how arguments were passed to the function.
 
-We also noticed performance issues on low-end devices that caused janky CSS animations and poor user experience.
+We also noticed performance issues on low-end devices that caused janky CSS animations and poor user experience, since the classnames evaluation could be skipped on some animation frames.
 
 We needed something with better performance that enforced consistent usage with fewer input options, resulting in code that was easier to understand and more performant.
 
