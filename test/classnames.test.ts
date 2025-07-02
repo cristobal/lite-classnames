@@ -14,7 +14,6 @@ describe(classNames.name, () => {
         {
           bar: true,
         },
-        undefined,
         {
           qux: true,
         },
