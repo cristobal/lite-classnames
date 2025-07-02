@@ -1,0 +1,5 @@
+# directories
+dist/
+
+# files
+package-lock.json
