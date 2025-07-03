@@ -4,9 +4,9 @@
 
 This is a simpler alternative to the [classnames](https://www.npmjs.com/package/classnames) package with a smaller API surface for lean classnames string generation.
 
-It's not meant to be a 1-to-1 drop-in replacement, but rather a more opinionated lightweight approach that encourages intentional usage. It supports only a limited set of input types:
+It's not meant to be a 1-to-1 drop-in replacement, but rather a more opinionated lightweight approach that encourages intentional usage. It only supports the following types as input:
 
-- `string`
+- `string` and
 - `Record<string, boolean>`
 
 Instead of supporting various input types and conditionally checking every user input, the responsibility shifts to the user to handle this programmatically. This leaves the function with less work to do, resulting in a smaller footprint and better performance.
@@ -56,7 +56,7 @@ However, this approach makes code less readable in our opinion.
 
 ### Will you accept feature requests?
 
-Most likely no. If you don't like the opinionated approach of this library, there are many other classnames libraries available:
+Most likely no. If you don't like the opinionated approach of this library, you can always use the original [classnames](https://www.npmjs.com/package/classnames) library or other alternative libraries that are available such as:
 
 - [clsx](https://www.npmjs.com/package/clsx)
 - [classcat](https://www.npmjs.com/package/classcat)

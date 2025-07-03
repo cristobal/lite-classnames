@@ -49,6 +49,8 @@
     "singleQuote": true
   },
   "files": [
-    "dist/*"
+    "dist/*",
+    "README.md",
+    "LICENSE"
   ]
 }
