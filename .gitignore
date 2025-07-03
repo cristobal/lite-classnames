@@ -6,3 +6,4 @@ dist/
 # files
 .DS_Store
 CLAUDE.md
+*.tgz

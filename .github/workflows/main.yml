@@ -1,4 +1,7 @@
 name: Main
+permissions:
+  contents: read       # Allows the workflow to read the repository contents
+  pull-requests: write # Allows the workflow to create and update pull requests
 
 on:
   # workflow_dispatch: allows to run the workflow manually from the GitHub UI

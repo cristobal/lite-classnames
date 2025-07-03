@@ -56,7 +56,7 @@ However, this approach makes code less readable in our opinion.
 
 ### Will you accept feature requests?
 
-Most likely no. If you don't like the opinionated approach of this library, you can always use the original [classnames](https://www.npmjs.com/package/classnames) library or other alternative libraries that are available such as:
+Most likely not. If you prefer a different approach, consider using the original [classnames](https://www.npmjs.com/package/classnames) library or other alternatives such as:
 
 - [clsx](https://www.npmjs.com/package/clsx)
 - [classcat](https://www.npmjs.com/package/classcat)
