@@ -1,6 +1,6 @@
 {
   "name": "lite-classnames",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A lightweight (\"lite\") classnames generation utility function",
   "main": "dist/classnames.js",
   "types": "dist/classnames.d.ts",
