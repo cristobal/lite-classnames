@@ -5,24 +5,32 @@
   "labels": ["renovate", "dependencies"],
   "schedule": ["at 06:00 on Monday"],
   "timezone": "Europe/Oslo",
+  "platformAutomerge": true,
   "packageRules": [
     {
       "dependencyDashboardApproval": true,
-      "matchUpdateTypes": ["major"]
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
     },
     {
       "matchManagers": ["github-actions"],
       "groupName": "Github Actions",
       "groupSlug": "devDependencies",
       "matchDepTypes": ["action"],
-      "pinDigests": true
-    },    
+      "pinDigests": true,
+      "automerge": true
+    },
     {
       "matchManagers": ["npm"],
       "groupName": "NPM",
       "groupSlug": "devDependencies",
       "matchDepTypes": ["devDependencies"],
-      "minimumReleaseAge": "3 days"
+      "minimumReleaseAge": "3 days",
+      "automerge": true
     }
   ]
 }
