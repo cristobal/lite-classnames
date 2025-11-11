@@ -16,8 +16,24 @@ jobs:
     if: github.event.pull_request.user.login == 'renovate[bot]'
 
     steps:
+      - name: Check labels
+        id: check-labels
+        run: |
+          LABELS='${{ toJson(github.event.pull_request.labels.*.name) }}'
+
+          # Check if PR has both required labels
+          if echo "$LABELS" | jq -e 'contains(["renovate"]) and contains(["dependencies"])' > /dev/null; then
+            echo "has_labels=true" >> $GITHUB_OUTPUT
+            echo "✅ PR has required labels: renovate, dependencies"
+          else
+            echo "has_labels=false" >> $GITHUB_OUTPUT
+            echo "⚠️  PR missing required labels"
+            echo "Labels found: $LABELS"
+          fi
+
       - name: Check if major update
         id: check-major
+        if: steps.check-labels.outputs.has_labels == 'true'
         run: |
           PR_TITLE="${{ github.event.pull_request.title }}"
 
@@ -33,7 +49,7 @@ jobs:
           fi
 
       - name: Enable auto-merge
-        if: steps.check-major.outputs.is_major == 'false'
+        if: steps.check-labels.outputs.has_labels == 'true' && steps.check-major.outputs.is_major == 'false'
         run: |
           gh pr merge ${{ github.event.pull_request.number }} --auto --squash --repo ${{ github.repository }}
           echo "✅ Auto-merge enabled for PR #${{ github.event.pull_request.number }}"
